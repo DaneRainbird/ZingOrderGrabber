@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Zing Order Grabber | View Orders</title>
+        <!-- Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Zing Pop Culture Order History Viewer">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="Dane Rainbird">
+        <link rel="canonical" href="https://danerainbird.me/" />
+    
+        <!-- OpenGraph Protocol -->
+        <meta property="og:title" content="Zing Pop Culture Order History Viewer" />
+        <meta property="og:site_name" content="danerainbird.me/zingorders" />
+        <meta property="og:description" content="Zing Pop Culture Order History Viewer" />
+    
+        <!-- Socials -->
+        <meta name="twitter:card" content="summary" />
+        <meta property="twitter:title" content="Zing Pop Culture Order History Viewer" />
+        <meta name="twitter:site" content="@datenyen" />
+        <meta name="twitter:creator" content="@Dane Rainbird" />
+    
+        <!-- JSON Linking Data -->
+        <script type="application/ld+json">{"headline":"Zing Pop Culture Order History Viewer","author":{"@type":"Person","name":"Dane Rainbird"},"sameAs":["https://twitter.com/datenyen","https://github.com/datenyan"],"url":"https://danerainbird.me/zingorders","@type":"WebSite","name":"Dane Rainbird","@context":"https://schema.org"}</script>
+
+        <!-- Stylesheet + Favicon -->
+        <link rel="stylesheet" type="text/css" href="res/main.css">
+        <link rel="icon" href="res/favicon.ico">
+    </head>
+    <body>
+        <!-- Container  -->
+        <div class="container">
+
+            <!-- Floating Action Button -->
+            <div class="about-fab">
+                ?
+            </div>
+            <!-- End Floating Action Button -->
+
+            <!-- Content -->
+            <div class="content">
+                <!-- Header -->
+                <div class="header">
+                    <h1>Zing Order Viewer</h1>
+                    <p class="subtitle">By <a href="https://danerainbird.me/" target="_blank">Dane Rainbird</a></p>
+                </div>
+                <!-- End Header -->
+                <!-- File Input Box -->
+                <div class="file-input-box" id="file-input-box">
+                    <label for="file-upload" class="file-upload-label">
+                        Select Output File!
+                    </label>
+                    <input type="file" id="file-upload" accept=".json"/>
+                </div>
+                <!-- End File Input Box -->
+                <!-- Orders List -->
+                <div class="orders hidden" id="orders">
+                    <!-- Orders Search Bar -->
+                    <div class="orders-search-bar">
+                        <input type="text" id="orders-search-bar" class="orders-search-bar" placeholder="Search Orders by Product, Location, or Price" />
+                    </div>
+                    <!-- End Orders Search Bar -->
+                </div>
+                <!-- End Orders List -->
+            </div>
+            <!-- End Content -->
+        </div>
+        <!-- End Container -->
+
+
+        <script src="res/main.js"></script>
+    </body>
+</html>

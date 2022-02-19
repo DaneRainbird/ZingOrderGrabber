@@ -1,0 +1,192 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    background-color: lightgray;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    background: #fff;
+    padding: 50px;
+    width: 600px;
+    max-width: 650px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.file-upload-label {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.file-upload-label:hover {
+    background-color: #ccc;
+}
+
+.hidden {
+    display: none;
+}
+
+summary {
+    cursor: pointer;
+}
+
+details > summary {
+    background-color: lightgray;
+    cursor: pointer;
+    padding: .5rem 1rem;
+}  
+
+details > summary > * {
+    display: inline;
+}
+  
+details > div {
+    border: 2px solid lightgray;
+    margin-top: 0;
+    padding: 5px;
+    text-align: left;
+}
+
+.order-detail-items-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.order-detail-items-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.order-detail-items-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.order-detail-items-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.order-detail-items-table tr:hover {
+    background-color: #ddd;
+}
+
+.order-detail-link-button {
+    background-color: #44c767;
+	border-radius: 12px;
+	border: 1px solid #18ab29;
+	cursor: pointer;
+    display: block;
+    margin: 1em;
+	color: white;
+	font-size: 14px;
+	padding: 10px;
+	text-decoration: none;
+	text-shadow: 0px 1px 12px #2f6627;
+    text-align: center;
+}
+
+.order-detail-link-button:hover {
+	background-color: #18ab29;
+}
+
+.order-detail-link-button:active {
+	position: relative;
+	top: 1px;
+}
+
+.orders { 
+    transition: all .2s ease-in-out;
+}
+
+.orders-search-bar {
+    margin-bottom: 1em;
+}
+
+.orders-search-bar input {
+    margin: auto;
+    display: block;
+    width: 75%;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    padding: .375rem .75rem;
+}
+
+.header > h1 {
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: small;
+    margin-top: 0;
+    color: lightgray;
+    font-style: italic;
+}
+
+.subtitle a {
+    color: lightgray;
+    transition: all .2s ease-in-out;
+}
+
+.subtitle a:hover {
+    color: darkgray;
+}
+
+.about-fab {
+    color: gray;
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #495057;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 20px;
+    transition: all .2s ease-in-out;
+}
+
+.about-fab:hover {
+    height: 50px;
+    width: 50px;
+    color: lightgray;
+}
