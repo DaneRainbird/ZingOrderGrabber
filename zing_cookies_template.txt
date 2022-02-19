@@ -1,0 +1,13 @@
+######################################
+# Cookies File for Zing Pop Culture  #
+# Format:                            #
+# name, value                        #
+######################################
+
+.ASPXAUTH
+.ASPXANONYMOUS
+__cf_bm
+customerid
+userdetail
+loyaltydetail
+Session
