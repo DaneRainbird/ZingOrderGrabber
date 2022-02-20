@@ -1,3 +1,9 @@
+/*************************************************/
+/* File: main.js                                 */
+/* Author: Dane Rainbird                         */
+/* Date: 20/02/2022                              */
+/*************************************************/
+
 /**
  * Reads the orders file and parses the orders
  * 
@@ -21,9 +27,6 @@ function readFile(e) {
         // Parse the orders
         parseOrders(contents);
 
-        // Hide the file input box
-        document.getElementById("file-input-box").classList.add("hidden");
-
     };
 
     // Read the file
@@ -36,8 +39,17 @@ function readFile(e) {
  * @param {*} contents data from the file
  */
 function parseOrders(contents) {
-    // JSONify the contents
-    contents = JSON.parse(contents);
+    // Try JSONify the contents
+    try {
+        contents = JSON.parse(contents);
+        
+        // Hide the file input box
+        document.getElementById("file-input-box").classList.add("hidden");
+
+    } catch (e) {
+        alert("Failed to parse the file. Please ensure you are using a valid JSON file.");
+        return;
+    }
 
     // Display the contents of the file
     let ordersElem = document.getElementById("orders");
@@ -84,10 +96,16 @@ function parseOrders(contents) {
     }
 }
 
+/**
+ * Event listener for the order search box. When the user types in the search box,
+ * the orders are filtered based on the search term (case insensitive).
+ */
 document.getElementById('orders-search-bar').addEventListener('keyup', function(e) {
     let searchTerm = e.target.value.toLowerCase();
     let orders = document.getElementById("orders");
     let orderElems = orders.getElementsByTagName("details");
+
+    // Check through each order and see if it contains the search term
     for (let i = 0; i < orderElems.length; i++) {
         let orderElem = orderElems[i];
         let order = orderElem.getElementsByClassName("order-detail")[0];
@@ -95,6 +113,7 @@ document.getElementById('orders-search-bar').addEventListener('keyup', function(
         let orderPrice = order.getElementsByClassName("order-detail-price")[0].innerText.toLowerCase();
         let orderItems = order.getElementsByClassName("order-detail-items-table")[0].childNodes[2].innerText.toLowerCase();
 
+        // If the order doesn't contain the search term, hide it
         if (orderLocation.includes(searchTerm) || orderItems.includes(searchTerm) || orderPrice.includes(searchTerm)) {
             orderElem.classList.remove("hidden");
         } else {
@@ -103,4 +122,26 @@ document.getElementById('orders-search-bar').addEventListener('keyup', function(
     }
 });
 
+/**
+ * Event listener for the file input box. When the user selects a file,
+ * the file is read and parsed.
+ */
 document.getElementById('file-upload').addEventListener('change', readFile, false);
+
+/**
+ * Event listener for the Floating Help Button. When the user clicks the button,
+ * the contents box is swapped for the help box.
+ */
+document.getElementById('about-fab').addEventListener('click', function() {
+    let aboutElem = document.getElementById('about');
+    let contentElem = document.getElementById('content');
+
+    // If the about box is hidden, show it, otherwise hide it
+    if (aboutElem.classList.contains('hidden')) {
+        aboutElem.classList.remove('hidden');
+        contentElem.classList.add('hidden');
+    } else {
+        aboutElem.classList.add('hidden');
+        contentElem.classList.remove('hidden');
+    }
+});

@@ -16,7 +16,7 @@ body {
     justify-content: center;
 }
 
-.content {
+.content, .about {
     background: #fff;
     padding: 50px;
     width: 600px;
@@ -189,4 +189,13 @@ details > div {
     height: 50px;
     width: 50px;
     color: lightgray;
+}
+
+.about a {
+    color: lightgray;
+    transition: all .2s ease-in-out;
+}
+
+.about a:hover {
+    color: darkgray;
 }
